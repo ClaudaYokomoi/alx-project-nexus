@@ -6,16 +6,6 @@ import ProductProvider from "./contexts/ProductContext";
 import SidebarProvider from "./contexts/SidebarContext";
 import CartProvider from "./contexts/CartContext";
 
-// Register the service worker
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/service-worker.js")
-      .then((registration) => console.log("Service Worker registered:", registration))
-      .catch((error) => console.log("Service Worker registration failed:", error));
-  });
-}
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <SidebarProvider>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
+import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,15 +11,14 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); // Default quantity is 1
 
-  // Fetch product details
+  // Fetch product details using Axios
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
         );
-        const data = await response.json();
-        setProduct(data);
+        setProduct(response.data);
       } catch (error) {
         console.error("Error fetching product details:", error);
       }

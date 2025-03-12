@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Checkout from "./pages/Checkout"; // Import the Checkout page
 import CartPage from "./pages/CartPage"; // Import the CartPage (optional)
+import Offers from "./pages/Offers"; // Import the Offers page
 
 // Components
 import Sidebar from "./components/Sidebar";
@@ -49,8 +50,9 @@ const App = () => {
                     <Route path="/contact" element={<GetInTouch />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
-                    <Route path="/checkout" element={<Checkout />} /> {/* Checkout route */}
-                    <Route path="/cart" element={<CartPage />} /> {/* CartPage route (optional) */}
+                    <Route path="/checkout" element={<Checkout />} /> 
+                    <Route path="/cart" element={<CartPage />} /> 
+                    <Route path="/offers" element={<Offers />} /> 
                   </Routes>
                 </main>
               </div>
